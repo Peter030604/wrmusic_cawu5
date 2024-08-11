@@ -1,29 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="60dp"
-    android:background="@color/black">
+    tools:context=".HomePage">
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/filterByTv"/>
 
     <TextView
+        android:id="@+id/filterByTv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Home"
-        android:textSize="24sp"
-        android:textColor="@android:color/white" />
+        android:layout_height="40dp"
+        android:text="Filter by :"/>
 
-    <TextView
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_below="@id/spinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Welcome, "
-        android:textSize="24dp"
-        android:textColor="@color/white"
-        android:id="@+id/welcomeUser"
-        />
+        android:layout_height="match_parent">
 
 
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
-</LinearLayout>
+    </androidx.viewpager.widget.ViewPager>
+        
+
+</RelativeLayout>
